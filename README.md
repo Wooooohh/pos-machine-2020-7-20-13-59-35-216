@@ -70,3 +70,47 @@ Suppose that our database is as follows:
 2. Please declare all the methods according to your diagram.
 3. Please implement the function according to the context diagram
 4. Please repeat step 3 until all functions are implemented.
+
+# PDCA(function)
+
+| PDCA | countItemsNum |
+| :----: | :----: |
+| P | 3min |
+| D | 12min |
+| C | 由于对JS集合的使用不熟悉，需要上网查找相关资料 |
+| A | 做更多的练习 |
+
+| PDCA | improveItemsInfo |
+| :----: | :----: |
+| P | 3min |
+| D | 5min |
+| C | 由于对JS对象的基本操作不熟练，需要上网查找相关资料 |
+| A | 做更多的练习 |
+
+| PDCA | coutItemPrice |
+| :----: | :----: |
+| P | 3min |
+| D | 3min |
+| C | 对JS基础知识的使用熟练，本方法的输入输出清晰 |
+| A | 下次计划更短的事件 |
+
+| PDCA | coutItemPrice |
+| :----: | :----: |
+| P | 5min |
+| D | 3min |
+| C | 对JS基础知识的使用熟练，本方法的输入输出清晰 |
+| A | 下次计划更短的事件 |
+
+| PDCA | formatReceiptInfo |
+| :----: | :----: |
+| P | 5min |
+| D | 1min |
+| C | 对JS基础知识的使用熟练，本方法的输入输出清晰 |
+| A | 下次计划更短的事件 |
+
+| PDCA | printReceiptInfo |
+| :----: | :----: |
+| P | 1min |
+| D | 1min |
+| C | 需求比较简单，代码实现容易 |
+| A | 下次计划更短的事件 |
