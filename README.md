@@ -71,7 +71,7 @@ Suppose that our database is as follows:
 3. Please implement the function according to the context diagram
 4. Please repeat step 3 until all functions are implemented.
 
-# PDCA(function)
+# PDCA(testing)
 
 | PDCA | countItemsNum |
 | :----: | :----: |
