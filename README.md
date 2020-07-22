@@ -72,8 +72,8 @@ Suppose that our database is as follows:
 
 # PDCA(testing&practice)
 1.countItemsNum
-input:Array[String]:barcodes
-output:Array[Object(barcode,num)]:ItemNum
+  - input:Array[String]:barcodes
+  - output:Array[Object(barcode,num)]:ItemNum
 | PDCA | countItemsNum |
 | :----: | :----: |
 | P | 3min |
@@ -82,8 +82,8 @@ output:Array[Object(barcode,num)]:ItemNum
 | A | 做更多的练习 |
 
 2.improveItemsInfo
-input:Array[Object(barcode,num)]:ItemNum
-output:Array[Object(barcode,num,name,price)]:ItemsInfo
+  - input:Array[Object(barcode,num)]:ItemNum
+  - output:Array[Object(barcode,num,name,price)]:ItemsInfo
 | PDCA | improveItemsInfo |
 | :----: | :----: |
 | P | 3min |
@@ -92,8 +92,8 @@ output:Array[Object(barcode,num,name,price)]:ItemsInfo
 | A | 做更多的练习 |
 
 3.coutItemPrice
-input:Array[Object(barcode,num,name,price)]:ItemNum
-output:Array[Object(barcode,num,name,price,subprice)]:ItemsInfo
+  - input:Array[Object(barcode,num,name,price)]:ItemNum
+  - output:Array[Object(barcode,num,name,price,subprice)]:ItemsInfo
 | PDCA | coutItemPrice |
 | :----: | :----: |
 | P | 3min |
@@ -102,8 +102,8 @@ output:Array[Object(barcode,num,name,price,subprice)]:ItemsInfo
 | A | 下次计划更短的事件 |
 
 4.coutTotalPrice
-input:Array[Object(barcode,num,name,price,subprice)]:ItemsInfo
-output:total:int
+  - input:Array[Object(barcode,num,name,price,subprice)]:ItemsInfo
+  - output:total:int
 | PDCA | coutTotalPrice |
 | :----: | :----: |
 | P | 5min |
@@ -112,8 +112,8 @@ output:total:int
 | A | 下次计划更短的事件 |
 
 5.formatReceiptInfo
-input:total:int,Array[Object(barcode,num,name,price,subprice)]:ItemsInfo
-output:string:receiptInfo
+  - input:total:int,Array[Object(barcode,num,name,price,subprice)]:ItemsInfo
+  - output:string:receiptInfo
 | PDCA | formatReceiptInfo |
 | :----: | :----: |
 | P | 5min |
@@ -122,8 +122,8 @@ output:string:receiptInfo
 | A | 下次计划更短的事件 |
 
 6.printReceiptInfo
-input:string:receiptInfo
-output:consoleResult
+  - input:string:receiptInfo
+  - output:consoleResult
 | PDCA | printReceiptInfo |
 | :----: | :----: |
 | P | 1min |
