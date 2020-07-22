@@ -65,14 +65,15 @@ Suppose that our database is as follows:
 ```
 
 # Principal
-
 1. Please draw context diagram.
 2. Please declare all the methods according to your diagram.
 3. Please implement the function according to the context diagram
 4. Please repeat step 3 until all functions are implemented.
 
-# PDCA(testing)
-
+# PDCA(testing&practice)
+1.countItemsNum
+input:Array[String]:barcodes
+output:Array[Object(barcode,num)]:ItemNum
 | PDCA | countItemsNum |
 | :----: | :----: |
 | P | 3min |
@@ -80,6 +81,9 @@ Suppose that our database is as follows:
 | C | 由于对JS集合的使用不熟悉，需要上网查找相关资料 |
 | A | 做更多的练习 |
 
+2.improveItemsInfo
+input:Array[Object(barcode,num)]:ItemNum
+output:Array[Object(barcode,num,name,price)]:ItemsInfo
 | PDCA | improveItemsInfo |
 | :----: | :----: |
 | P | 3min |
@@ -87,6 +91,9 @@ Suppose that our database is as follows:
 | C | 由于对JS对象的基本操作不熟练，需要上网查找相关资料 |
 | A | 做更多的练习 |
 
+3.coutItemPrice
+input:Array[Object(barcode,num,name,price)]:ItemNum
+output:Array[Object(barcode,num,name,price,subprice)]:ItemsInfo
 | PDCA | coutItemPrice |
 | :----: | :----: |
 | P | 3min |
@@ -94,13 +101,19 @@ Suppose that our database is as follows:
 | C | 对JS基础知识的使用熟练，本方法的输入输出清晰 |
 | A | 下次计划更短的事件 |
 
-| PDCA | coutItemPrice |
+4.coutTotalPrice
+input:Array[Object(barcode,num,name,price,subprice)]:ItemsInfo
+output:total:int
+| PDCA | coutTotalPrice |
 | :----: | :----: |
 | P | 5min |
 | D | 3min |
 | C | 对JS基础知识的使用熟练，本方法的输入输出清晰 |
 | A | 下次计划更短的事件 |
 
+5.formatReceiptInfo
+input:total:int,Array[Object(barcode,num,name,price,subprice)]:ItemsInfo
+output:string:receiptInfo
 | PDCA | formatReceiptInfo |
 | :----: | :----: |
 | P | 5min |
@@ -108,6 +121,9 @@ Suppose that our database is as follows:
 | C | 对JS基础知识的使用熟练，本方法的输入输出清晰 |
 | A | 下次计划更短的事件 |
 
+6.printReceiptInfo
+input:string:receiptInfo
+output:consoleResult
 | PDCA | printReceiptInfo |
 | :----: | :----: |
 | P | 1min |
