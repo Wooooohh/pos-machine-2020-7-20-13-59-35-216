@@ -6,17 +6,17 @@ function printReceipt(barcodes) {
 // Name: Battery, Quantity: 1, Unit price: 2 (yuan), Subtotal: 2 (yuan)
 // ----------------------
 // Total: 23 (yuan)
-// **********************`)
-    var ItemsNum = countItemsNum(barcodes);
-    var ItemsInfo = improveItemsInfo(ItemsNum);
-    ItemsInfo = coutItemPrice(ItemsInfo);
-    var total = coutTotalPrice(ItemsInfo);
-    var ReceiptInfo = formatReceiptInfo(total,ItemsInfo);
+// **********************')
+    var itemsNum = countItemsNum(barcodes);
+    var itemsInfo = improveItemsInfo(itemsNum);
+    ItemsInfo = coutItemPrice(itemsInfo);
+    var total = coutTotalPrice(itemsInfo);
+    var ReceiptInfo = formatReceiptInfo(total,itemsInfo);
     printReceiptInfo(ReceiptInfo);
 }
 
 function countItemsNum(barcodes){
-    let ItemsNums = []; 
+    let itemsNums = []; 
     let map = new Map();
     for (let index = 0; index < barcodes.length; index++) {
         let b = barcodes[index];
@@ -29,17 +29,17 @@ function countItemsNum(barcodes){
         let obj = new Object();
         obj.barcode = key;
         obj.num = map.get(key);
-        ItemsNums.push(obj);
+        itemsNums.push(obj);
     });
-    return ItemsNums;
+    return itemsNums;
 }
 
-function improveItemsInfo(ItemsNum){
-    let ItemsInfo = getItemsInfo();
-    for (let i = 0; i < ItemsNum.length; i++) {
-        let obj = ItemsNum[i];
-        for(let j = 0; j < ItemsInfo.length; j++){
-            let info = ItemsInfo[j];
+function improveItemsInfo(itemsNum){
+    let itemsInfo = getItemsInfo();
+    for (let i = 0; i < itemsNum.length; i++) {
+        let obj = itemsNum[i];
+        for(let j = 0; j < itemsInfo.length; j++){
+            let info = itemsInfo[j];
             if(obj.barcode == info.barcode){
                 obj.name = info.name;
                 obj.price = info.price;
@@ -47,25 +47,26 @@ function improveItemsInfo(ItemsNum){
             // console.log(ItemsNum)
         }
     }
-    return ItemsNum;
+    return itemsNum;
 }
 
-function coutItemPrice(ItemsInfo){
-    for (let i = 0; i < ItemsInfo.length; i++) {
-        let obj = ItemsInfo[i];
+function coutItemPrice(itemsInfo){
+    for (let i = 0; i < itemsInfo.length; i++) {
+        let obj = itemsInfo[i];
         let subprice = obj.num*obj.price;
         obj.subprice = subprice;
     }
-    return ItemsInfo;
+    return itemsInfo;
 }
 
-function coutTotalPrice(ItemsInfo){
-    let Total = 0;
-    for (let i = 0; i < ItemsInfo.length; i++) {
-        let obj = ItemsInfo[i];
-        Total = Total + obj.subprice;
+//TODO: name space
+function coutTotalPrice(itemsInfo){
+    let total = 0;
+    for (let i = 0; i < itemsInfo.length; i++) {
+        let obj = itemsInfo[i];
+        total = total + obj.subprice;
     }
-    return Total;
+    return total;
 }
 // ***<store earning no money>Receipt ***
 // Name: Coca-Cola, Quantity: 5, Unit price: 3 (yuan), Subtotal: 15 (yuan)
@@ -75,19 +76,19 @@ function coutTotalPrice(ItemsInfo){
 // Total: 23 (yuan)
 // **********************`
 function formatReceiptInfo(total, ItemsInfo){
-    let ReceiptInfo ='\n***<store earning no money>Receipt ***\n';
-    for(let i = 0; i < ItemsInfo.length; i++){
-        let obj = ItemsInfo[i];
-        ReceiptInfo = ReceiptInfo + 'Name: ' + obj.name +', Quantity: '+ obj.num +', Unit price: ' + obj.price + ' (yuan), Subtotal: ' + obj.subprice + ' (yuan)\n'
+    let receiptInfo ='\n***<store earning no money>Receipt ***\n';
+    for(let i = 0; i < itemsInfo.length; i++){
+        let obj = itemsInfo[i];
+        receiptInfo = receiptInfo + 'Name: ' + obj.name +', Quantity: '+ obj.num +', Unit price: ' + obj.price + ' (yuan), Subtotal: ' + obj.subprice + ' (yuan)\n'
     }
-    ReceiptInfo = ReceiptInfo + '----------------------\n';
-    ReceiptInfo = ReceiptInfo + 'Total: ' + total + ' (yuan)\n';
-    ReceiptInfo = ReceiptInfo + '**********************';
-    return ReceiptInfo;
+    receiptInfo = receiptInfo + '----------------------\n';
+    receiptInfo = receiptInfo + 'Total: ' + total + ' (yuan)\n';
+    receiptInfo = receiptInfo + '**********************';
+    return receiptInfo;
 }
 
-function printReceiptInfo(ReceiptInfo){
-    console.log(ReceiptInfo)
+function printReceiptInfo(receiptInfo){
+    console.log(receiptInfo)
 }
 
 function getItemsInfo(){
