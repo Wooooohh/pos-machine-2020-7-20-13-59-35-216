@@ -74,6 +74,7 @@ Suppose that our database is as follows:
 1.countItemsNum
   - input:Array[String]:barcodes
   - output:Array[Object(barcode,num)]:ItemNum
+  
 | PDCA | countItemsNum |
 | :----: | :----: |
 | P | 3min |
@@ -84,6 +85,7 @@ Suppose that our database is as follows:
 2.improveItemsInfo
   - input:Array[Object(barcode,num)]:ItemNum
   - output:Array[Object(barcode,num,name,price)]:ItemsInfo
+  
 | PDCA | improveItemsInfo |
 | :----: | :----: |
 | P | 3min |
@@ -94,6 +96,7 @@ Suppose that our database is as follows:
 3.coutItemPrice
   - input:Array[Object(barcode,num,name,price)]:ItemNum
   - output:Array[Object(barcode,num,name,price,subprice)]:ItemsInfo
+  
 | PDCA | coutItemPrice |
 | :----: | :----: |
 | P | 3min |
@@ -104,6 +107,7 @@ Suppose that our database is as follows:
 4.coutTotalPrice
   - input:Array[Object(barcode,num,name,price,subprice)]:ItemsInfo
   - output:total:int
+  
 | PDCA | coutTotalPrice |
 | :----: | :----: |
 | P | 5min |
@@ -114,6 +118,7 @@ Suppose that our database is as follows:
 5.formatReceiptInfo
   - input:total:int,Array[Object(barcode,num,name,price,subprice)]:ItemsInfo
   - output:string:receiptInfo
+  
 | PDCA | formatReceiptInfo |
 | :----: | :----: |
 | P | 5min |
@@ -124,6 +129,7 @@ Suppose that our database is as follows:
 6.printReceiptInfo
   - input:string:receiptInfo
   - output:consoleResult
+  
 | PDCA | printReceiptInfo |
 | :----: | :----: |
 | P | 1min |
